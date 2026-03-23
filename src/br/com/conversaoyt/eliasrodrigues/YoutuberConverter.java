@@ -58,6 +58,7 @@ public class YoutuberConverter {
             String linha;
             while((linha = leitor.readLine()) != null){
                 System.out.println(linha);
+
             }
         } catch(IOException e){
 
