@@ -48,22 +48,37 @@ public class YoutuberConverter {
         sc.close();
     }
 
-    static void executarComando(String [] args){
+    static void executarComando(String [] comando){
         try {
-            processBuilder pb = new ProcessBuilder(comando);
+            ProcessBuilder pb = new ProcessBuilder(comando);
             pb.redirectErrorStream(true);
+            Process processo = pb.start();
 
-            java.io.BufferedReader leitor = new java.io.BufferedReader(processo.getInputStream());
+            java.io.BufferedReader leitor = new java.io.BufferedReader(
+                    new java.io.InputStreamReader(processo.getInputStream())
+            );
 
             String linha;
             while((linha = leitor.readLine()) != null){
                 System.out.println(linha);
-
             }
+
+            int codigoSaida = processo.waitFor();
+
+            if (codigoSaida == 0){
+                System.out.println("Download feito com sucesso.");
+                System.out.println("O arquivo foi salvo onde o programa foi rodado");
+            } else {
+                System.out.println("Algo deu Errado. Código de erro: " + codigoSaida);
+            }
+
         } catch(IOException e){
+            System.out.println("Erro: não foi possível executar o yt-dlp.");
+            System.out.println("Verifique se está instalado no PATH do sistema.");
+            System.out.println(e.getMessage());
 
         } catch(InterruptedException e){
-
+            System.out.println("Aconteceu algo errado.");
         }
     }
 }
