@@ -12,5 +12,22 @@ então decidi criar o meu próprio conversor para satisfazer as minhas necessida
 
 ## Ferramentas externas
 O Programa necessita de duas ferramentas externas para ser rodado, que são:
-- yt-dlp
-- ffmpeg
+- [yt-dlp ](https://github.com/yt-dlp/yt-dlp)
+- [FFmpeg](https://ffmpeg.org/download.html)
+  
+**O processo de instalação destes dois podem variar dependendo do sistema operacional.**
+
+---
+
+## Ferramentas essenciais para o programa funcionar:
+- Java 25
+- JDK (Java Development Kit)
+- IDE focada em Java, como Intellij ou Eclipse
+
+---
+
+## Contribuição
+Fique a vontade para contribuir, Opinar, e até clonar o projeto, ficarei muito grato.
+
+O projeto está sobre a Licença MIT, veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
